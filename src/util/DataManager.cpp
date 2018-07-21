@@ -29,6 +29,9 @@
 #define RESP_TICK_INFO 0
 #define RESP_INFO 1
 
+const char* DataManager::wifiSsid;
+const char* DataManager::wifiPass;
+
 void DataManager::init()
 {
     Serial.begin(SERIAL_BAUDRATE);
