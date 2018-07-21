@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
+#pragma once
+
 #include <Arduino.h>
-#include "util/DataManager.h"
-#include "config.h"
 
-void setup()
-{
-    DataManager::init();
-}
+const String NAME = "Vega";
+const String VER = "0.1.0";
+const String COPYRIGHT = "(C) 2018 iTX Technologies";
 
-void loop()
-{
-    DataManager::update();
-    delay(MAIN_LOOP_DELAY);
-}
+//Serial config
+#define SERIAL_BAUDRATE 115200
+#define SERIAL_READ_TIMEOUT 200
+
+#define MAIN_LOOP_DELAY 200

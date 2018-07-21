@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-#include <Arduino.h>
-#include "util/DataManager.h"
-#include "config.h"
+#pragma once
 
-void setup()
+class DataManager
 {
-    DataManager::init();
-}
-
-void loop()
-{
-    DataManager::update();
-    delay(MAIN_LOOP_DELAY);
-}
+private:
+  static const char* wifiSsid;
+  static const char* wifiPass;
+  static void connectWifi();
+public:
+  static void init();
+  static void update();
+  static void requestInfo();
+};
