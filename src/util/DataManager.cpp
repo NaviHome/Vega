@@ -29,14 +29,13 @@
 #define RESP_TICK_INFO 0
 #define RESP_INFO 1
 
-const char* DataManager::wifiSsid;
-const char* DataManager::wifiPass;
+const char *DataManager::wifiSsid;
+const char *DataManager::wifiPass;
 
 void DataManager::init()
 {
     Serial.begin(SERIAL_BAUDRATE);
     sendInfo();
-    requestInfo();
 }
 
 void DataManager::sendInfo()
@@ -51,10 +50,21 @@ void DataManager::requestInfo()
     Serial.println(F("{\"c\":3}"));
 }
 
-void DataManager::update()
+boolean DataManager::update()
 {
+    if(!WiFi.isConnected())
+    {
+        requestInfo();
+    }
+
     DynamicJsonBuffer jsonBuffer(256);
-    JsonObject &resp = jsonBuffer.parseObject(Serial);
+    char json[64];
+    Serial.readBytes(json, sizeof(json));
+    JsonObject &resp = jsonBuffer.parseObject(json);
+    if (!resp.success())
+    {
+        return false;
+    }
     //process response first
     if (resp.containsKey("r"))
     {
@@ -69,7 +79,9 @@ void DataManager::update()
             connectWifi();
             break;
         }
+        return true;
     }
+    return false;
 }
 
 void DataManager::connectWifi()

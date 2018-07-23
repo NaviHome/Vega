@@ -24,7 +24,7 @@ private:
   static void connectWifi();
 public:
   static void init();
-  static void update();
+  static boolean update();
   static void requestInfo();
   static void sendInfo();
 };
