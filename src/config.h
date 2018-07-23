@@ -16,11 +16,9 @@
 
 #pragma once
 
-#include <Arduino.h>
-
-const String NAME = "Vega";
-const String VER = "0.1.0";
-const String COPYRIGHT = "(C) 2018 iTX Technologies";
+#define NAME "Vega"
+#define VER "0.1.0"
+#define COPYRIGHT "(C) 2018 iTX Technologies"
 
 //Serial config
 #define SERIAL_BAUDRATE 115200

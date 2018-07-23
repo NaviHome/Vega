@@ -6,8 +6,6 @@
 
 The firmware of the WiFi Module of [NaviHome](https://github.com/NaviHome) by [iTX Technologies](https://github.com/iTXTech).
 
-This project is previously called "Chronos" (using Microsoft Azure IoT Hub).
-
 ## Requirements
 
 * WiFi Module * 1
@@ -19,7 +17,7 @@ This project is previously called "Chronos" (using Microsoft Azure IoT Hub).
 ## Compatible Boards
 
 * [ESP8266 DevBoard](https://www.esp8266.com/wiki/doku.php?id=esp8266-module-family)
-* [ESP32-DevKitC V4](https://esp-idf.readthedocs.io/en/latest/get-started/get-started-devkitc.html)
+* [ESP32 DevBoard](https://esp-idf.readthedocs.io/en/latest/get-started/get-started-devkitc.html) - *Changes required*
 
 ## Step to Build
 

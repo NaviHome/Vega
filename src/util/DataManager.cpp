@@ -35,7 +35,15 @@ const char* DataManager::wifiPass;
 void DataManager::init()
 {
     Serial.begin(SERIAL_BAUDRATE);
+    sendInfo();
     requestInfo();
+}
+
+void DataManager::sendInfo()
+{
+    char str[30];
+    sprintf(str, "{\"c\":0,\"n\":%s,\"v\":%s}", NAME, VER);
+    Serial.println(str);
 }
 
 void DataManager::requestInfo()

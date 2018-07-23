@@ -26,4 +26,5 @@ public:
   static void init();
   static void update();
   static void requestInfo();
+  static void sendInfo();
 };
