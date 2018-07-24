@@ -22,6 +22,6 @@
 
 //Serial config
 #define SERIAL_BAUDRATE 115200
-#define SERIAL_READ_TIMEOUT 200
+#define SERIAL_READ_TIMEOUT 100
 
 #define MAIN_LOOP_DELAY 200

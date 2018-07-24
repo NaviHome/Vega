@@ -35,6 +35,7 @@ const char *DataManager::wifiPass;
 void DataManager::init()
 {
     Serial.begin(SERIAL_BAUDRATE);
+    Serial.setTimeout(SERIAL_READ_TIMEOUT);
     sendInfo();
 }
 
@@ -50,7 +51,7 @@ void DataManager::requestInfo()
     Serial.println(F("{\"c\":3}"));
 }
 
-boolean DataManager::update()
+bool DataManager::update()
 {
     if(!WiFi.isConnected())
     {
