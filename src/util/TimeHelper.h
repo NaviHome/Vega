@@ -14,20 +14,11 @@
  * limitations under the License.
  */
 
-#include <Arduino.h>
-#include "util/DataManager.h"
-#include "util/TimeHelper.h"
-#include "config.h"
+#pragma once
 
-void setup()
+class TimeHelper
 {
-    DataManager::init();
-    TimeHelper::init();
-}
-
-void loop()
-{
-    DataManager::update();
-    TimeHelper::update();
-    delay(MAIN_LOOP_DELAY);
-}
+public:
+  static void init();
+  static void update();
+};

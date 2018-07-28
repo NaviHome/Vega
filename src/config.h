@@ -25,3 +25,7 @@
 #define SERIAL_READ_TIMEOUT 100
 
 #define MAIN_LOOP_DELAY 200
+
+#define NTP_SERVER_1 "ntp.xxx"
+#define NTP_SERVER_2 "ntp.xxx"
+#define NTP_SERVER_3 "ntp.xxx"

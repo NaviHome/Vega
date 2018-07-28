@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-#include <Arduino.h>
-#include "util/DataManager.h"
-#include "util/TimeHelper.h"
-#include "config.h"
+#include <ESP8266WiFi.h>
+#include "TimeHelper.h"
+#include "../config.h"
 
-void setup()
+void TimeHelper::init()
 {
-    DataManager::init();
-    TimeHelper::init();
+    configTime(0, 0, NTP_SERVER_1, NTP_SERVER_2, NTP_SERVER_3);
 }
 
-void loop()
+void TimeHelper::update()
 {
-    DataManager::update();
-    TimeHelper::update();
-    delay(MAIN_LOOP_DELAY);
+
 }
