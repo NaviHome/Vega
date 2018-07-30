@@ -1,7 +1,7 @@
 # Vega
 
 [![License](https://img.shields.io/github/license/NaviHome/Vega.svg)](https://github.com/NaviHome/Vega/blob/master/LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0--alpha-orange.svg)](https://github.com/NaviHome/Vega/blob/master/src/config.h)
+[![Version](https://img.shields.io/badge/version-0.1dev-orange.svg)](https://github.com/NaviHome/Vega/blob/master/src/config.h)
 [![Build Status](https://travis-ci.org/NaviHome/Vega.svg?branch=master)](https://travis-ci.org/NaviHome/Vega)
 
 The firmware of the WiFi Module of [NaviHome](https://github.com/NaviHome) by [iTX Technologies](https://github.com/iTXTech).
