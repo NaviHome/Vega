@@ -18,7 +18,11 @@
 
 class TimeHelper
 {
+private:
+  static unsigned long lastNtpUpdate;
+  static unsigned long timestampNow;
 public:
   static void init();
   static void update();
+  static void sendTime();
 };

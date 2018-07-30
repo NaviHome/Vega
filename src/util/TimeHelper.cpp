@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
+#include <Arduino.h>
 #include <ESP8266WiFi.h>
+#include <time.h>
 #include "TimeHelper.h"
 #include "../config.h"
+
+unsigned long TimeHelper::lastNtpUpdate = 0;
+unsigned long TimeHelper::timestampNow = 0;
 
 void TimeHelper::init()
 {
@@ -25,5 +30,21 @@ void TimeHelper::init()
 
 void TimeHelper::update()
 {
+    if (millis() - lastNtpUpdate > NTP_INTERVAL)
+    {
+        time_t now = time(NULL);
+        if(now > 0)
+        {
+            lastNtpUpdate = millis();
+            timestampNow = now;
+        }
+        sendTime();
+    }
+}
 
+void TimeHelper::sendTime()
+{
+    char str[40];
+    sprintf(str, "{\"c\":2,\"t\":\"%ld\"", timestampNow);
+    Serial.println(str);
 }

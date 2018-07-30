@@ -29,3 +29,4 @@
 #define NTP_SERVER_1 "ntp.xxx"
 #define NTP_SERVER_2 "ntp.xxx"
 #define NTP_SERVER_3 "ntp.xxx"
+#define NTP_INTERVAL 60000//default 10min
